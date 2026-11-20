@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gato Garcia: renders for STL miniatures</title>
+<meta name="description" content="Studio renders for STL sculptors: 5 angles, a 360° turntable and transparent files for every model, delivered in 48 hours.">
+<meta property="og:title" content="Gato Garcia: renders for STL miniatures">
+<meta property="og:description" content="5 angles, a 360° turntable and transparent files for every model. 48 hours.">
+<meta property="og:image" content="assets/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // motion mode: full by default, reduced when the OS asks for it; ?motion=full forces full (for previewing)
+  (function () {
+    var d = document.documentElement, force = /[?&]motion=full\b/.test(location.search);
+    var reduce = !force && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    d.classList.add('js', reduce ? 'reduce' : 'motion');
+  })();
+</script>
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursor-label">Drag</span></div>
+
+<a class="float-cta" id="float-cta" href="#prices">
+  <span class="float-cta-text"><strong>First render free</strong><span class="float-cta-extra"> · from $10 per model</span><span class="float-cta-short"> · then $10</span></span>
+  <span class="float-cta-go">Get it <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+</a>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <header class="top">
+    <a class="mark" href="#top">GATOGARCIA</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#angles">Work</a>
+      <a href="#prices">Prices</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="pill" href="#prices">Free render</a>
+  </header>
+
+  <div class="stage">
+    <h1 class="word">SHOW IT OFF</h1>
+    <p class="tag">Studio renders for your miniatures.</p>
+
+    <div class="pedestal" aria-hidden="true"></div>
+    <figure class="spin" id="spin" data-cursor="Drag" aria-label="360 degree turntable of a barbarian miniature raising a hammer. Drag to rotate.">
+      <canvas id="spin-canvas" width="900" height="900"></canvas>
+      <img class="spin-fallback" src="assets/spin/0096.webp" alt="Barbarian miniature raising a war hammer">
+    </figure>
+  </div>
+
+  <div class="hero-foot">
+    <div class="offer">
+      <p class="offer-price"><strong>$10</strong> per model<span>·</span>first render free</p>
+      <p class="offer-text">5 angles, 360° turntable and transparent files. Ready in 48 hours.</p>
+      <a class="pill pill-solid" href="#prices">Get a free render</a>
+    </div>
+    <a class="down" href="#about" aria-label="Scroll down"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    <p class="hint">Drag to rotate</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <h2>What you get</h2>
+  <p class="sub">One folder per model.</p>
+
+  <div class="cols">
+    <p>Send me your STL and you get back a complete set of images for your store: five angles at 2048 pixels, a contact sheet and a 360° turntable as GIF and MP4.</p>
+    <p>Every image also comes with a transparent version, so you can make your own banners and ads. Add a hero shot on the tabletop scene for campaigns. Delivered in 48 hours.</p>
+  </div>
+
+  <div class="trio">
+    <figure><img src="assets/models/barbarian/normal_045.webp" alt="Normal shot of the barbarian miniature on a grey studio background" loading="lazy"><figcaption>Normal shot</figcaption></figure>
+    <figure><img src="assets/img/hero.webp" alt="Hero shot of the miniature on a wooden table with rim light" loading="lazy"><figcaption>Hero shot</figcaption></figure>
+    <figure class="alpha"><img src="assets/models/barbarian/iso_045.webp" alt="Transparent version of the barbarian render" loading="lazy"><figcaption>Transparent</figcaption></figure>
+  </div>
+</section>
+
+<!-- HERO SHOT FEATURE -->
+<section class="feature" id="hero-shot">
+  <div class="feature-copy">
+    <p class="kicker">Hero shot</p>
+    <h2>Made for<br>the campaign</h2>
+    <p class="feature-text">Your model on a tabletop scene, with rim light and depth. Built for the places where people decide to back or buy: your Kickstarter header, Patreon banner, ads and social posts.</p>
+    <ul class="feature-list">
+      <li>Same model, cinematic light</li>
+      <li>Tabletop scene included</li>
+      <li>Custom scene for your theme: +$30–50</li>
+    </ul>
+    <p class="feature-price"><strong>+$5</strong> per model in the bundle</p>
+    <a class="pill" href="#prices">Get a hero shot</a>
+  </div>
+  <figure class="feature-img">
+    <img src="assets/img/hero_lg.webp" alt="Hero shot: the barbarian miniature on a wooden table, rim-lit against a black background, with a spotlight on its base" loading="lazy">
+  </figure>
+</section>
+
+<!-- COLLECTION: every angle of every model -->
+<section class="angles" id="angles">
+  <div class="models" id="models" role="group" aria-label="Choose a model">
+    <button type="button" class="on" data-m="0" aria-pressed="true"><span class="thumb"><img src="assets/models/anuth/iso_045.webp" alt=""></span>Anuth</button>
+    <button type="button" data-m="1" aria-pressed="false"><span class="thumb"><img src="assets/models/dwarf/iso_045.webp" alt=""></span>Dwarf</button>
+    <button type="button" data-m="2" aria-pressed="false"><span class="thumb"><img src="assets/models/guardian/iso_045.webp" alt=""></span>Guardian</button>
+    <button type="button" data-m="3" aria-pressed="false"><span class="thumb"><img src="assets/models/mink/iso_045.webp" alt=""></span>Mink</button>
+    <button type="button" data-m="4" aria-pressed="false"><span class="thumb"><img src="assets/models/barbarian/iso_045.webp" alt=""></span>Barbarian</button>
+  </div>
+
+  <div class="car">
+    <button class="side side-l" id="prev" type="button" aria-label="Previous angle">
+      <span class="side-label">Left</span>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      <img id="prev-img" src="assets/models/anuth/iso_000.webp" alt="">
+    </button>
+
+    <div class="center">
+      <img id="cur-img" src="assets/models/anuth/iso_045.webp" alt="Anuth at 45 degrees">
+    </div>
+
+    <button class="side side-r" id="next" type="button" aria-label="Next angle">
+      <img id="next-img" src="assets/models/anuth/iso_090.webp" alt="">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      <span class="side-label">Right</span>
+    </button>
+  </div>
+
+  <div class="car-foot">
+    <div>
+      <h2 id="model-name">Anuth</h2>
+      <p class="by" id="by">by Fed Tabula Games</p>
+    </div>
+    <div class="pager" id="pager" role="tablist" aria-label="Angles">
+      <button type="button" data-i="0" aria-label="0 degrees">01</button>
+      <button type="button" class="on" data-i="1" aria-label="45 degrees">02</button>
+      <button type="button" data-i="2" aria-label="90 degrees">03</button>
+      <button type="button" data-i="3" aria-label="180 degrees">04</button>
+      <button type="button" data-i="4" aria-label="270 degrees">05</button>
+    </div>
+    <p class="deg" id="deg">045°</p>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="block" id="compare">
+  <h2 class="center-h">Before / after</h2>
+  <p class="sub">Same sculpt. Different store.</p>
+  <div class="ba" id="ba" data-cursor="Slide">
+    <img src="assets/models/barbarian/normal_045.webp" alt="The barbarian miniature as a studio render" class="ba-after">
+    <div class="ba-before"><img src="assets/img/before.webp" alt="The miniature as a flat viewport screenshot"></div>
+    <div class="ba-line" aria-hidden="true"><span></span></div>
+    <input type="range" min="0" max="100" value="50" id="ba-range" aria-label="Move to compare before and after">
+    <span class="ba-tag l">Typical preview</span>
+    <span class="ba-tag r">Normal shot</span>
+  </div>
+  <p class="note">Left side: an example of a typical viewport preview.</p>
+</section>
+
+<!-- PRICES -->
+<section class="block" id="prices">
+  <h2 class="center-h">Prices</h2>
+  <p class="sub">Per model. Your first one is free.</p>
+  <div class="prices">
+    <article>
+      <h3>Normal shot</h3>
+      <p class="amt">$10</p><p class="per">per model</p>
+      <ul><li>5 angles, 2048px</li><li>360° turntable</li><li>Contact sheet</li><li>Transparent versions</li></ul>
+    </article>
+    <article class="main">
+      <h3>Bundle</h3>
+      <p class="amt">$15</p><p class="per">per model</p>
+      <ul><li>Everything in the normal shot</li><li>Hero shot on the tabletop scene</li></ul>
+    </article>
+    <article>
+      <h3>Monthly</h3>
+      <p class="amt">$250</p><p class="per">per month</p>
+      <ul><li>20 bundles a month</li><li>Ready before your release</li></ul>
+    </article>
+    <article>
+      <h3>Catalog</h3>
+      <p class="amt">$7</p><p class="per">per model, 50+</p>
+      <ul><li>$7 normal, $10 bundle</li><li>Your old listings, re-shot</li></ul>
+    </article>
+  </div>
+  <p class="note">Custom hero scene for your theme: +$30–50. Payment upfront.</p>
+
+  <!-- the free render offer lives with the prices, so every "free render" button lands on both -->
+  <div class="offer-box" id="contact">
+    <div>
+      <h3>Send one model. Get it rendered free.</h3>
+      <p>Send your store name and a link to one STL. You get the full normal shot folder back, free.</p>
+    </div>
+    <a class="pill pill-solid pill-big" href="mailto:hello@gatogarciaart.me?subject=Free%20render">hello@gatogarciaart.me</a>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="block" id="how">
+  <h2 class="center-h">How it works</h2>
+  <ol class="steps">
+    <li><span>01</span><h3>Send your STL</h3><p>A Drive, WeTransfer or Dropbox link is enough.</p></li>
+    <li><span>02</span><h3>I render it</h3><p>Same light and camera for every model, so your store looks consistent.</p></li>
+    <li><span>03</span><h3>Download</h3><p>Your folder within 48 hours. One round of small changes included.</p></li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="faq">
+  <h2 class="center-h">FAQ</h2>
+  <div class="faq">
+    <details><summary>Are my files safe?</summary><p>Your STLs are never shared, posted or sold, and they're deleted after delivery. I can sign your NDA.</p></details>
+    <details><summary>Can I use the images anywhere?</summary><p>Yes: your store, Patreon, Kickstarter, ads and social media. I only show your renders in my portfolio if you say it's OK.</p></details>
+    <details><summary>Supported or unsupported files?</summary><p>Unsupported is best, so the renders show the model without supports. Pre-supported files work too.</p></details>
+    <details><summary>What if I want changes?</summary><p>One round of small changes (light, angle, crop) is included. A new scene counts as a custom hero scene.</p></details>
+    <details><summary>How do I pay?</summary><p>Upfront, per order. For big catalogs, half upfront and half on delivery.</p></details>
+  </div>
+</section>
+
+<section class="credits" aria-label="Model credits">
+  <p class="credits-h">Models shown</p>
+  <p>All renders by Gato Garcia. Models used under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>:
+    <a href="https://sketchfab.com/3d-models/none-8637ae16b7384a3f9e72f0ebaa01fc65">“Sons of the Mountain – Barbarians: the Invasion”</a> and
+    <a href="https://sketchfab.com/3d-models/none-189381fd96ca42ddad8ff90864786073">“Anuth – Mysthea”</a> by Fed Tabula Games ·
+    <a href="https://sketchfab.com/3d-models/none-593f9fa0add64cb7bdd9ef04f12eea0d">“Dwarf Dragon Warrior”</a> and
+    <a href="https://sketchfab.com/3d-models/none-f6d869d928d24421938f27bbbcff1e37">“Cursed Guardian – Kneeling”</a> by TheSurrealFactory ·
+    <a href="https://sketchfab.com/3d-models/none-36fcc3e7c5294b01880fde814d49a537">“Mink Dragon-Half D&amp;D Miniature”</a> by Ethan Savage.
+    The hero shot shows “Sons of the Mountain”.
+  </p>
+</section>
+
+<footer class="foot">
+  <span>GATOGARCIA</span>
+  <nav><a href="https://www.instagram.com/gatogarciaart/" target="_blank" rel="noopener" aria-label="Instagram: gatogarciaart">IG</a><a href="mailto:hello@gatogarciaart.me">MAIL</a></nav>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
