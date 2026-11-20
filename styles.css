@@ -384,6 +384,8 @@ html, body { overflow-x: clip; }
 .offer-box h3 { font: 800 clamp(18px, 1.8vw, 24px)/1.2 var(--font); text-transform: uppercase; }
 .offer-box p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
 .offer-box .pill { flex: none; text-transform: none; }
+.sample-link { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.sample-link:hover { opacity: .75; }
 @media (max-width: 900px) {
   .offer-box { flex-direction: column; align-items: flex-start; }
 }
